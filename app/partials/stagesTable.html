@@ -1,0 +1,27 @@
+﻿<table class="table table-hover table-striped table-condensed table-bordered stagesTable" data-ng-controller="StageChildController">
+    <thead>
+        <tr>
+            <th data-ng-click="setstage('speak')">speak Title</th>
+            <th data-ng-click="setstage('stage')">stage</th>
+            <th data-ng-click="setstage('day')">Day of speak</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-hide="speaker.stages  || speaker.stages.length > 0" class="error">
+            <td colspan="4">
+                <div class="text-center"><strong>No stages found</strong></div>
+            </td>
+        </tr>
+        <tr data-ng-repeat="stage in speaker.stages | filter:search:strict | orderBy:stageby:reverse">
+            <td>
+                {{ stage.speak }}
+            </td>
+            <td>
+                {{ stage.stage }}
+            </td>
+            <td>
+                {{ stage.day }}
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="speakersApp">
+<head>
+    <title>Speaker Manager</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="Content/speakersStyles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand " href="#/">
+                    <img src="Content/Images/people.png" alt="logo"> Speaker Manager
+                </a>
+                <ul class="nav nav-pills" data-ng-controller="NavbarController">
+                    <li data-ng-class="{'active':getClass('/speakers')}"><a href="#/speaker">Speakers</a></li>
+                    <li data-ng-class="{'active':getClass('/stages')}"><a href="#/stages">Stages</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div transition-view></div>
+
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                            <div class="span4">
+                                Created by Olivier Goyon for Test purpose
+                            </div>
+                            <div class="span4">
+                                Github: <a href="https://github.com/ss-bb">ss-bb</a>
+                            </div>
+                            <div class="span4">
+                                Blog: <a href="http://ss-bb.github.io/">http://ss-bb.github.io</a>
+                            </div>
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+    <script src="app/services/speakersService.js"></script>
+    <script src="app/directives/animatedView.js"></script>
+</body>
+</html>
