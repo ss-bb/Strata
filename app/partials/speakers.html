@@ -1,0 +1,45 @@
+﻿<div class="speakers view">
+    <div class="container">
+        <header>
+            <h3>Speakers</h3>
+        </header>
+        <div class="row">
+            <h4 style="margin-left:30px;">Add your own (no WS->no save)</h4>
+            <div class="span3">
+                First Name:
+                <br />
+                <input data-ng-model="newSpeaker.firstName" type="text" placeholder="First Name">
+            </div>
+            <div class="span3">
+                Last Name:
+                <br />
+                <input data-ng-model="newSpeaker.lastName" type="text" placeholder="Last Name">
+            </div>
+            <div class="span6">
+                2 words presentations:
+                <br />
+                <input data-ng-model="newSpeaker.pres" type="text" placeholder="Last Name">
+                <button id="submitSpeaker" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!newSpeaker.firstName || !newSpeaker.lastName || !newSpeaker.pres" 
+                    data-ng-click="insertSpeaker()">Add Speaker</button>
+            </div>
+        </div>
+        <br /><br />
+        <div>
+            <h4>basic filter for speaker</h4>
+            <input data-ng-model="search.firstName" type="text" placeholder="filter on firstName">
+            <input data-ng-model="search.$" type="text" placeholder="filter on all field">
+        </div>
+        <br /><br />
+        <div>
+            <div class="row cardContainer">
+                <div class="span3 card" data-ng-repeat="speaker in speakers | filter:search:strict | orderBy:'lastName'">
+                    <button class="btn close cardClose" data-ng-click="deleteSpeaker(speaker.id)">&times;</button>
+                    <div class="cardHeader"><a class="aColor" href="#/speakerstages/{{speaker.id}}">{{speaker.firstName + ' ' + speaker.lastName}}</a></div>
+                    {{speaker.pres}}<br />
+                    <a href="#/speakerstages/{{speaker.id}}" class="cardBody btn-link">View {{ speaker.stages.length }} speaks</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
