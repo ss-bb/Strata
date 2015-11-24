@@ -95,3 +95,20 @@ footer {
 .close {
     opacity: 1.0;
 }
+
+.comment0{
+    background-color:lightblue;
+    width:40%;
+    height:30px;
+    border-radius: 10px;
+    padding-left:10px;
+}
+
+.comment1{
+    background-color:grey;
+    text-align:right;
+    width:40%;
+    height:30px;
+    border-radius: 10px;
+    padding-right:10px;
+}
