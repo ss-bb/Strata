@@ -1,4 +1,4 @@
-﻿app.service('speakersService', function () {
+app.service('speakersService', function () {
     this.getSpeakers = function () {
         return speakers;
     };
@@ -39,6 +39,10 @@
                 { speak: 'SVN', day:"monday", stage: 1 },
                 { speak: 'GIT', day:"tuesday", stage: 4 },
                 { speak: 'open Source World', day:"wednesday", stage: 3}
+            ],
+            comments: [
+                { text: 'sit amet'},
+                { text: 'Lorem ipsum dolor'}
             ]
         },
         {
@@ -48,6 +52,10 @@
                 { speak: 'Angular', day:"monday", stage: 2},
                 { speak: 'ReactJs', day:"tuesday", stage: 3},
                 { speak: 'NodeJS', day:"wednesday", stage: 2 }
+            ],
+            comments: [
+                { text: 'Awersome Experience, Ionic will win!'},
+                { text: 'Lorem ipsum dolor'}
             ]
         },
         {
@@ -55,6 +63,10 @@
             stages: [
                 { speak: 'PHP', day:"monday", stage: 4},
                 { speak: 'SF2', day:"tuesday", stage: 1}
+            ],            
+            comments: [
+                { text: 'sit amet'},
+                { text: 'Lorem ipsum dolor'}
             ]
         },
         {
@@ -62,6 +74,10 @@
             stages: [
                 { speak: 'lorem', day:"monday", stage: 1},
                 { speak: 'Ipsum', day:"wednesday", stage: 2}
+            ],
+            comments: [
+                { text: 'sit amet'},
+                { text: 'Lorem ipsum dolor'}
             ]
         },
     ];
