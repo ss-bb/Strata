@@ -1,4 +1,4 @@
-﻿
+
 app.controller('SpeakersController', function ($scope, speakersService) {
 
     init();
@@ -25,8 +25,6 @@ app.controller('SpeakersController', function ($scope, speakersService) {
 
 app.controller('SpeakerStagesController', function ($scope, $routeParams, speakersService) {
     $scope.speaker = {};
-    $scope.stagesTotal = 0.00;
-
 
     init();
 
@@ -36,6 +34,12 @@ app.controller('SpeakerStagesController', function ($scope, $routeParams, speake
             $scope.speaker = speakersService.getSpeaker(speakerID);
         }
     }
+
+    $scope.insertComment = function () {
+        var comment = $scope.newComment;
+        $scope.speaker.comments.push(comment);
+        $scope.newComment = '';
+    };
 
 });
 
@@ -64,7 +68,6 @@ app.controller('NavbarController', function ($scope, $location) {
 app.controller('StageChildController', function ($scope) {
     $scope.stageby = 'speak';
     $scope.reverse = false;
-    $scope.stagesTotal = 0.00;
 
     init();
 
