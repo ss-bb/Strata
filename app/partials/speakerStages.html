@@ -1,4 +1,4 @@
-﻿<div class="customerStages view">
+<div class="customerStages view">
     <div class="container">
         <header>
             <h3>Speaker Stages</h3>
@@ -17,6 +17,19 @@
                 <br /><br />
                 <div class="span12">
                     <div data-ng-include="'app/partials/stagesTable.html'" />
+                </div>
+                <div class="span12">
+                    <h4>Comment on this Speaker</h4>
+                    <div data-ng-repeat="comment in speaker.comments">
+                        <p class="comment{{$index%2}}">{{comment.text}}</p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <h4>Add a comment (will not be save)</h4>
+                    <input data-ng-model="newComment.text" type="text" placeholder="write a comment">
+                    <button id="submitComment" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!newComment" 
+                    data-ng-click="insertComment()">Add Comment</button>
                 </div>
             </div>
         </div>
